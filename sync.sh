@@ -7,7 +7,7 @@ alertsuberror="Alert: The Niftsync Service on $HOSTNAME Encountered an Error"
 alertsubrep="Report for Niftsync Service on $HOSTNAME"
 
 ## Specify remote fileshare mountpoint
-remotesrv="/otium"
+remotesrv="/share"
 ## Specify local directory as sync source
 localsrv="/tank"
 ## Specifiy whether script should always notify or only if there's a problem
