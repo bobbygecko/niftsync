@@ -4,7 +4,7 @@ A directory replication script with HTML email alerts.
 # Intro
 This tool is designed for use in cases where file replication between two directories with email alerts is desired. The original implimentation was for VM backup replication between two servers over NFS.
 
-The script relies on a few dependencies to function properly. Namely the ``ssmtp`` package for handling email sending, ``rsync`` to handle the actual data replication, and ``perl`` for generating said email reports. In addition, the default configuration for this script requires it's connection to a Gmail account in order to send emails.
+The script relies on a few dependencies to function properly. Namely the ``ssmtp`` package for handling email sending, ``rsync`` to handle the actual data replication, and ``perl`` for generating said email reports. In addition, the default configuration for this script requires its connection to a Gmail account in order to send emails.
 
 # Setup
 To get started (and after the aformentioned prerequisites have been installed/updated), the ``ssmtp.conf`` file should be edited to reflect the credentials to the Gmail account to be used for sending email reports. After editing the file, save and close it and move it to ``/etc/ssmtp``.
@@ -20,3 +20,11 @@ Next, the ``sync.sh`` file should be opened for editing. The default configurabl
 * erroronly = If set to "false", the script will always send an email alert after running. If set to anything else, the script will only send an email alert when the script encounters an error.
 
 By default the script will delete any logs that are older than 30 days that exist in the `logs` folder. This can be manipulated by changing the "`find logs/ -type f -name 'log*' -mtime +30 -exec rm {} +`" line.
+
+# Running the Script
+
+To run the script manually (first run, etc.) ensure that `sync.sh` is executable.
+
+`chmod +x scrypt.sh`
+
+Then it can be manually executed via `./sync.sh`. Naturally, the script can be automatically run by cron at set intervals, the `crontab` file contains a example wherein the script is run by cron every Sunday at 10AM.
