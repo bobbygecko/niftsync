@@ -25,6 +25,6 @@ By default the script will delete any logs that are older than 30 days that exis
 
 To run the script manually (first run, etc.) ensure that `sync.sh` is executable.
 
-`chmod +x scrypt.sh`
+`chmod +x sync.sh`
 
 Then it can be manually executed via `./sync.sh`. Naturally, the script can be automatically run by cron at set intervals, the `crontab` file contains a example wherein the script is run by cron every Sunday at 10AM.
