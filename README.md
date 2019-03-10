@@ -27,4 +27,4 @@ To run the script manually (first run, etc.) ensure that `sync.sh` is executable
 
 `chmod +x sync.sh`
 
-Then it can be manually executed via `./sync.sh` (depending on the ammount of data and the connection speed between directories, this can take some time - it's better to run the script using `screen`, eg. "screen ./sync.sh"). Naturally, the script can be automatically run by cron at set intervals, the `crontab` file contains a example wherein the script is run by cron every Sunday at 10AM.
+Then it can be manually executed via `./sync.sh` (depending on the ammount of data and the connection speed between directories, this can take some time - it's generally a good idea to fork the process for this reason, eg. `./sync.sh &`). Naturally, the script can be automatically run by cron at set intervals, the `crontab` file contains a example wherein the script is run by cron every Sunday at 10AM.
