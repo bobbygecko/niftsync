@@ -70,7 +70,7 @@ elif [[ $(mountpoint -q $remotesrv) != 1 ]] && [[ $mounted = "false" ]]; then
     perl -pi -e 's#%%emailmessage%%#'"`cat tmp/log.sending`"'#' $mailsend
 
     # Send the notification email
-    ssmtp $emailtoaddr < $mailsend
+    cat $mailsend | msmtp -a gmail $emailtoaddr
 
     # Clean up temp files
     rm -r tmp
@@ -109,7 +109,7 @@ if rsync -raq --delete $localsrv $remotesrv; then
         perl -pi -e 's#%%emailmessage%%#'"`cat tmp/log.sending`"'#' $mailsend
 
         # Send the notification email
-        ssmtp $emailtoaddr < $mailsend
+        cat $mailsend | msmtp -a gmail $emailtoaddr
 
        # Clean up temp files
        rm -r tmp
@@ -143,7 +143,7 @@ else
     perl -pi -e 's#%%emailmessage%%#'"`cat tmp/log.sending`"'#' $mailsend
 
     # Send the notification email
-    ssmtp $emailtoaddr < $mailsend
+    cat $mailsend | msmtp -a gmail $emailtoaddr
 
     # Clean up temp files
     rm -r tmp
