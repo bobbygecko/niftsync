@@ -4,10 +4,10 @@ A directory replication script with HTML email alerts.
 # Intro
 This tool is designed for use in cases where file replication between two directories with email alerts is desired. The original implimentation was for VM backup replication between two servers over NFS.
 
-The script relies on a few dependencies to function properly. Namely the ``ssmtp`` package for handling email sending, ``rsync`` to handle the actual data replication, and ``perl`` for generating said email reports. In addition, the default configuration for this script requires its connection to a Gmail account in order to send emails.
+The script relies on a few dependencies to function properly. Namely the ``msmtp`` package for handling email sending, ``rsync`` to handle the actual data replication, and ``perl`` for generating said email reports. In addition, the default configuration for this script requires its connection to a Gmail account in order to send emails.
 
 # Setup
-To get started (and after the aformentioned prerequisites have been installed/updated), the ``ssmtp.conf`` file should be edited to reflect the credentials to the Gmail account to be used for sending email reports. After editing the file, save and close it and move it to ``/etc/ssmtp``.
+To get started (and after the aformentioned prerequisites have been installed/updated), the ``msmtprc`` file should be edited to reflect the credentials to the Gmail account to be used for sending email reports. After editing the file, save and close it and move it to ``/etc/msmtprc``.
 
 Next, the ``sync.sh`` file should be opened for editing. The default configurable options are:
 
